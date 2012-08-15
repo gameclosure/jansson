@@ -34,7 +34,28 @@
 
 /* If locale.h and localeconv() are available, define to 1,
    otherwise to 0. */
-// This breaks iOS -cat
-//#define JSON_HAVE_LOCALECONV 1
+#define JSON_HAVE_LOCALECONV 1
+
+
+//// Handle platform weirdness
+
+#if __APPLE__
+
+#include "TargetConditionals.h"
+
+#ifdef TARGET_OS_IPHONE
+#undef JSON_HAVE_LOCALECONV
+
+#elif TARGET_IPHONE_SIMULATOR
+#undef JSON_HAVE_LOCALECONV
+
+#elif TARGET_OS_MAC
+#else
+#endif
+
+#endif // __APPLE__
+
+//// End of platform weirdness
+
 
 #endif
