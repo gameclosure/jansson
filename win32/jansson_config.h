@@ -38,7 +38,7 @@
 
 
 //// Handle platform weirdness
-
+/*
 #if __APPLE__
 
 #include "TargetConditionals.h"
@@ -54,7 +54,7 @@
 #endif
 
 #endif // __APPLE__
-
+*/
 //// End of platform weirdness
 
 
