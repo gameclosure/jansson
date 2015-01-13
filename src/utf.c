@@ -166,8 +166,9 @@ int utf8_check_string(const char *string, int length)
 {
     int i;
 
-    if(length == -1)
-        length = strlen(string);
+    if(length == -1) {
+        length = (int)strlen(string);
+    }
 
     for(i = 0; i < length; i++)
     {

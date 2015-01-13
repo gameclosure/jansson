@@ -116,7 +116,7 @@ void json_decref(json_t *json)
 typedef struct {
     int line;
     int column;
-    int position;
+    size_t position;
     char source[JSON_ERROR_SOURCE_LENGTH];
     char text[JSON_ERROR_TEXT_LENGTH];
 } json_error_t;
